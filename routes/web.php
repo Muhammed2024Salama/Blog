@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\ThemeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * THEME ROUTE
+ */
 Route::name('theme.')->controller(ThemeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/category', 'category')->name('category');
@@ -25,6 +29,23 @@ Route::name('theme.')->controller(ThemeController::class)->group(function () {
 //    Route::get('/login', 'login')->name('login');
 //    Route::get('/register', 'register')->name('register');
 });
+
+/**
+ * Subscriber Store Route
+ */
+Route::post('/subscriber/store',[SubscriberController::class,'store'])->name('subscriber.store');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/dashboard', function () {

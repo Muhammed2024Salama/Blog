@@ -38,19 +38,19 @@ class ThemeController extends Controller
         return view('theme.single-blog');
     }
 
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
-    public function login()
-    {
-        return view('theme.login');
-    }
-
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
-    public function register()
-    {
-        return view('theme.register');
-    }
+//    /**
+//     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+//     */
+//    public function login()
+//    {
+//        return view('theme.login');
+//    }
+//
+//    /**
+//     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+//     */
+//    public function register()
+//    {
+//        return view('theme.register');
+//    }
 }
