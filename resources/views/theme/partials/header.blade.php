@@ -31,14 +31,29 @@
                     <!-- End - Add new blog -->
 
                     <ul class="nav navbar-nav navbar-right navbar-social">
-                        <a href="#" class="btn btn-sm btn-warning">Register / Login</a>
-                        <!-- <li class="nav-item submenu dropdown">
-                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Welcome User</a>
-                          <ul class="dropdown-menu">
-                            <li class="nav-item"><a class="nav-link" href="blog-details.html">My Blogs</a></li>
-                          </ul>
-                        </li> -->
+                        @if(!Auth::check())
+                            <a href="{{ route('register') }}" class="btn btn-sm btn-warning">Register / Login</a>
+                        @else
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                   aria-expanded="false">Welcome {{ Auth::user()->name }}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('theme.singleBlog') }}">My Blogs</a></li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0);" onclick="document.getElementById('logout-form').submit();">
+                                            LogOut
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        @endif
+
                     </ul>
                 </div>
             </div>
