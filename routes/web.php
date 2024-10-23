@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\ThemeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,10 @@ Route::name('theme.')->controller(ThemeController::class)->group(function () {
  */
 Route::post('/subscriber/store',[SubscriberController::class,'store'])->name('subscriber.store');
 
+/**
+ * CONTACT Store Route
+ */
+Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
 
 
 

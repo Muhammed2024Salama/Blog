@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Frontend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubscriberRequest;
-use App\Models\Subscriber;
-use Illuminate\Http\Request;
+use App\Models\Frontend\Subscriber;
 
 class SubscriberController extends Controller
 {
@@ -13,6 +13,9 @@ class SubscriberController extends Controller
      */
     protected $subscriber;
 
+    /**
+     * @param Subscriber $subscriber
+     */
     public function __construct(Subscriber $subscriber)
     {
         $this->subscriber = $subscriber;
